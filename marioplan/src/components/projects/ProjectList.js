@@ -9,7 +9,7 @@ const ProjectList = ({projects}) => {
       //nur wenn projects Inhalt hat, dann führe .map aus 
       { projects && projects.map(project => {
         return (
-          //project und id prop an Summary übergeben
+          //project und id prop an Summary übergeben und anzeigen
           <ProjectSummary project={project} key={project.id} />
         )
       })}  
