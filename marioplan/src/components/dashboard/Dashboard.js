@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
-import ProjectList from '../projects/ProjectList'
-import Notifications from './Notifications'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import ProjectList from "../projects/ProjectList";
+import Notifications from "./Notifications";
+import { connect } from "react-redux";
 
 class Dashboard extends Component {
   render() {
-    
     // console.log(this.props);
     //holt das projects property aus den props direkt raus
     const { projects } = this.props;
-    
+
     return (
       <div className="dashboard container">
         <div className="row">
@@ -22,7 +21,7 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -31,8 +30,8 @@ const mapStateToProps = (state) => {
   return {
     //neues Objekt erstellen um die Projekte aus dem Store zu speichern
     //Dieses Objekt representiert die properties welche an die props der Dashboard component zugefügt wurden
-    projects: state.project.projects
-  }
-}
+    projects: state.project.projects,
+  };
+};
 //Store mit Dashboard verbinden -- mapStateToProps in connect geben damit es weiß welche Daten geholt werden müssen
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(Dashboard);
